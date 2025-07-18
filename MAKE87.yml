@@ -1,6 +1,25 @@
-build_kit:
-  name: python3
-  version: latest
-outbound_topics:
-  - name: HELLO_WORLD_MESSAGE
-    message_type: make87_messages.text.text_plain.PlainText
+version: 1
+interfaces:
+  - name: lerobot
+    protocol: grpc
+    servers:
+      - name: robotclient
+        spec:
+          string: lerobot-grpc
+        port:
+          name: policyserver
+          protocol: TCP
+          target_port: 8080
+config: null
+build:
+  build_kit:
+    name: python3_cuda
+dev_build:
+  build_kit:
+    name: python3_cuda
+    build_additions:
+      ide: vscode_server_py3
+      ssh: ssh_server
+peripheral_requirements:
+  - peripheral_type: GPU
+    name: GPU

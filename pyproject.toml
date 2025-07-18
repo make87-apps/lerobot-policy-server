@@ -6,10 +6,10 @@ build-backend = "setuptools.build_meta"
 name = "app"
 version = "0.0.1"
 dependencies = [
-  "make87",
-  "make87_messages",
+#  "make87==0.1.0.dev7",
+#  "make87_messages",
+  "lerobot[async,smolvla] @ git+https://github.com/huggingface/lerobot.git"
 ]
-description = "A small example package"
 readme = "README.md"
 requires-python = ">=3.9,<3.13"
 
