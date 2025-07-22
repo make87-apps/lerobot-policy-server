@@ -17,11 +17,9 @@ def start_lerobot_policy_server(use_gpu: bool = False, host: str = "0.0.0.0", po
     config = PolicyServerConfig(
         host=host,
         port=port,
-        policy_device=device,
     )
 
     serve(config)
-
 
 
 if __name__ == "__main__":
